@@ -139,7 +139,7 @@ if [[ $stage == 4 ]]; then
 	if [[ $retrogame = y ]]; then
 		#If retrogame is being used for push-buttons:
         echo Copy retrogame executable to /usr/local/bin
-		cp rpi-rfid-video/retrogame /usr/local/bin
+		cp rpi-rfid-video/retrogame /usr/local/bin/retrogame
         exit_on_error $?
         echo Update executable flag for retrogame executable
 		chmod 755 /usr/local/bin/retrogame
