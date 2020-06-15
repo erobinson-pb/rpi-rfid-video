@@ -14,6 +14,10 @@ A pinout diagram for the three push-to-make control buttons can be found [here](
 
 The documentation is a work in progress.  It will be updated with plans for the box that houses the Pi and components to build an optional CPU temperature controlled fan ASAP.  There will also be documentation for temporarily enabling SSH access to the unit for remote support (over LAN or WiFi) if required.
 
+A big thank you to Duncan Brown for originally posting the request for information on where to get a simple DVD player for his dad which got me thinking about what we could do with a Raspberry Pi.  The original project took a couple of weeks longer than I had hoped due to work commitments, so thanks for your patience on that, Duncan.
+Another big thank you goes to MyBroadband user Apoc184 for contributing to funding the original prototype that Duncan’s dad is still using at the time of writing.
+Lastly a huge thank you to Mark O’ Sullivan who has put in many hours of testing and helping debug the installation routine and has provided valuable insight into some enhancements planned for a future release.
+
 This project is released under the MIT license:
 Copyright 2019 Edward Robinson
 Some components included in this release are copyright their individual developers including:
