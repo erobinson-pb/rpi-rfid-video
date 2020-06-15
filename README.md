@@ -19,7 +19,6 @@ Another big thank you goes to MyBroadband user Apoc184 for contributing to fundi
 Lastly a huge thank you to Mark O’ Sullivan who has put in many hours of testing and helping debug the installation routine and has provided valuable insight into some enhancements planned for a future release.
 
 This project is released under the MIT license:
-Copyright 2019 Edward Robinson
 Some components included in this release are copyright their individual developers including:
 Adafruit retrogame utility: Copyright (c) 2013 Adafruit Industries.  Written by Phil Burgess for Adafruit Industries, distributed under BSD License.
 Components borrowed from scripts originally written by Billy Manashi - [bma-diy](https://github.com/bma-diy/rpi-rfid-video "bma-diy") 
