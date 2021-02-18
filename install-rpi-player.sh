@@ -162,29 +162,29 @@ if [[ $stage == 4 ]]; then
             exit_on_error $?
 		fi
 	fi
-	_next "Update /etc/rc.local with scanner service python script"
+	_next "Update /etc/rc.local with scanner service python script, player.sh script and update /boot/cmdline.txt for silent boot"
 fi
 
 if [[ $stage == 5 ]]; then
 	echo update /etc/rc.local to auto start scanner service python script
 	grep "scansvc.py" /etc/rc.local >/dev/null
 	if [[ $? -eq 0 ]]; then
-		# scansvc already in rc.local, but make sure correct:
+		echo scansvc already in rc.local, but make sure correct:
 		sed -i "s/^.*scansvc.*$/python3 \/home\/pi\/rpi-rfid-video\/scansvc.py \&/g" /etc/rc.local >/dev/null
         exit_on_error $?
 	else
-		# Insert scansvc.py into rc.local before final 'exit 0'
+		echo Insert scansvc.py into rc.local before final 'exit 0'
 		sed -i "s/^exit 0/python3 \/home\/pi\/rpi-rfid-video\/scansvc.py \&\\nexit 0/g" /etc/rc.local >/dev/null
         exit_on_error $?
 	fi
 	echo update /etc/rc.local with player.sh script
 	grep "player.sh" /etc/rc.local >/dev/null
 	if [[ $? -eq 0 ]]; then
-		# player.sh already in rc.local, but make sure correct:
+		echo player.sh already in rc.local, but make sure correct:
 		sed -i "s/^.*player.*$/openvt -s -w \/home\/pi\/rpi-rfid-video\/player.sh/g" /etc/rc.local >/dev/null
         exit_on_error $?
 	else
-		# Insert player.sh into rc.local before final 'exit 0'
+		echo Insert player.sh into rc.local before final 'exit 0'
 		sed -i "s/^exit 0/openvt -s -w \/home\/pi\/rpi-rfid-video\/player.sh \\nexit 0/g" /etc/rc.local >/dev/null
         exit_on_error $?
 	fi
