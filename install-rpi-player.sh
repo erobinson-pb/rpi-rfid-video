@@ -189,8 +189,8 @@ if [[ $stage == 5 ]]; then
         exit_on_error $?
 	fi
     echo Update /boot/cmdline.txt for silent boot
-    partuuid=$(cat /boot/cmdline.txt | grep -o -P '(?<=PARTUUID=).*' | awk '{print $1}')
-    sh -c "echo 'console=serial0,115200 console=tty3 root=PARTUUID=$partuuid rootfstype=ext4 elevator=deadline fsck.repair=yes rootwait vt.global_cursor_default=0 loglevel=3 quiet'>/boot/cmdline.txt"
+    sed -i 's/console=tty./console=tty3/g' /boot/cmdline.txt >/dev/null
+    sed -i 's/$/ vt.global_cursor_default=0 loglevel=3 quiet/' /boot/cmdline.txt >/dev/null    
     exit_on_error $?
     echo Done!
 fi
